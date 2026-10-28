@@ -69,9 +69,9 @@ When software can write or delete broadly, the risk is overreach. Map a workspac
 
 Simple, stable, hassle-free.
 
-- **One-click Mount** — Pick a folder and a drive letter, click Connect — optionally remount when the app starts.
+- **One-click Mount** — Pick a folder and a drive letter, click Connect — the mapping is saved, and with Auto-start it is restored automatically at the next boot.
 - **Native Experience** — Use it in Explorer like a normal drive — shorter paths, easier to remember.
-- **Auto-start** — Optionally remount saved mappings when you open ScsSubst.
+- **Auto-start** — Optionally start ScsSubst with Windows and re-mount the saved mappings, so the drive letters are back on your next sign-in.
 - **Lightweight & Stable** — Pure Windows APIs — no third-party file-system driver. Small portable build.
 - **Multiple mappings** — Add several folder mappings, each with its own drive letter.
 - **Advanced options** — Optional visibility for elevated apps, Recycle Bin, and more — simple by default.
@@ -97,12 +97,12 @@ The details below reflect each tool's publicly documented behaviour and the curr
 | **vSubst** | Very small graphical front-end for drive-letter mappings | Yes | See the tool's own documentation | A minimal interface for people who only want to click once |
 | **`mklink /J`** | Windows built-in directory junction: the target appears as a normal folder under its parent path | No — junctions do not get a drive letter | The link itself persists as long as the target folder exists | Best compatibility and normal Recycle Bin behaviour, but many tutorials and tools that require a letter cannot use it |
 | **New-PSDrive** | PowerShell cmdlet that creates a PSDrive | Yes, but only inside PowerShell | No — the PSDrive lives only in the PowerShell session that created it | PowerShell-only workflows; it is not visible in File Explorer |
-| **ScsSubst** | Windows tool that maps an existing local folder to a drive letter, with a list of mappings and options for elevated apps and the Recycle Bin | Yes | Saved mappings can be re-created when the app starts (remount on app start) | Focus: multiple-mapping management + remount on app start + workspace isolation. Windows 10 / 11 (64-bit); local folders only |
+| **ScsSubst** | Windows tool that maps an existing local folder to a drive letter, with a list of mappings and options for elevated apps and the Recycle Bin | Yes — with Auto-start enabled, ScsSubst starts with Windows and re-creates the saved mappings (remount on app start) | Focus: multiple-mapping management + remount on app start + workspace isolation. Windows 10 / 11 (64-bit); local folders only |
 
 **How to choose**
 
 - You need a letter once, for one folder: the built-in `subst.exe` is enough.
-- You want a GUI that re-creates the same mappings at logon: Visual Subst does that from an ini file.
+- You want a GUI that re-creates the same mappings at logon: Visual Subst does that from an ini file; ScsSubst does the same when you enable Auto-start.
 - You script the mappings, including persistence via `/P`: psubst fits the batch flow.
 - You need the target to stay a normal folder inside a project tree, with Recycle Bin behaviour intact: `mklink /J` is the compatible choice, but it gives no drive letter.
 - You need one letter per workspace, many folders at once, and a mapping that comes back on app start: that is ScsSubst.
@@ -137,7 +137,7 @@ Pricing and current plans are listed on the official site: https://subst.scsoi.c
 
 ## Sister products
 
-- **[ScsDrive](https://github.com/shuyingegit/scsdriver)** — [drive.scsoi.com](https://drive.scsoi.com) — mount WebDAV / cloud drives as a Windows local disk — open cloud files like a hard drive.
+- **[ScsDrive](https://github.com/shuyingegit/scsdriver)** — repo id `scsdriver`, same product — [drive.scsoi.com](https://drive.scsoi.com) — mount WebDAV / cloud drives as a Windows local disk — open cloud files like a hard drive.
 - **[ScsExpand](https://github.com/shuyingegit/scsexpand)** — [expand.scsoi.com](https://expand.scsoi.com) — grow C: using free space from the same physical disk — files stay in place.
 
 More from SCSOI — [SCSOI company site](https://scsoi.com)
@@ -151,7 +151,7 @@ ScsSubst is a Windows tool that maps a folder which already exists on your PC to
 No. ScsSubst creates a mapping that points at the folder where it already sits. Nothing is copied, no extra disk space is used, and read/write speed stays the same as the disk the folder lives on.
 
 **Do the mappings survive a restart or a logoff?**  
-The underlying Windows mapping is session-level, so a plain `subst.exe` mapping is gone after you sign out or restart the machine, and you need your own startup script to make it stick. ScsSubst keeps your mapping list saved and can re-create the saved mappings when the app starts, so open ScsSubst (or let it start) before you rely on the drive letter.
+The underlying Windows mapping is session-level, so a plain `subst.exe` mapping is gone after you sign out or restart the machine, and you need your own startup script to make it stick. ScsSubst keeps your mapping list saved and can re-create the saved mappings when the app starts; with Auto-start enabled it starts with Windows, so the drive letters are back on your next sign-in.
 
 **Can I manage several mappings at the same time?**  
 Yes. ScsSubst supports multiple mappings, each with its own drive letter, kept in one list where you can add, edit and remove entries. Managing several folders is the main reason people use it instead of typing `subst` by hand for every folder.
