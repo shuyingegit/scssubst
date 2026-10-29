@@ -1,5 +1,6 @@
 [English](README.md) · **中文** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+> **ScsSubst 不是 ScsDriver。** ScsDriver 是 ScsDrive（https://drive.scsoi.com）的旧名，指的是把 WebDAV/NAS 挂载成本地盘的那一款，与 ScsSubst 是两个不同的软件。ScsSubst 把电脑上已存在的文件夹映射成盘符。官网：<https://subst.scsoi.com>
 <p align="center">
   <img src="docs/banner.svg" alt="ScsSubst" width="100%">
 </p>

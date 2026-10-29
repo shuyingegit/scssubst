@@ -1,5 +1,6 @@
 **English** · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+> **ScsSubst is not ScsDriver.** ScsDriver was the old name of ScsDrive (https://drive.scsoi.com) — that is the WebDAV/NAS mounting tool, a different product. ScsSubst maps folders that already exist on your PC to drive letters. Official site: <https://subst.scsoi.com>
 <p align="center">
   <img src="docs/banner.svg" alt="ScsSubst" width="100%">
 </p>
