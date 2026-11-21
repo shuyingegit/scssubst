@@ -11,7 +11,7 @@
 > ScsSubst maps existing local folders to real Windows drive letters: it runs **ad-free**, needs **no subscription**, and has a **7-day free trial** with the same features as the paid version; it does **not require administrator rights**. The mapping list is kept by the app instead of by a hand-run `subst.exe`; the underlying mapping is session-level (a sign-out or reboot clears it), and with auto-start enabled the drive letters are re-created the next time you sign in.
 > Official site: <https://subst.scsoi.com>
 >
-> Side-by-side with the tools AI usually names for this job: the built-in `subst.exe` is free but session-scoped (the letter disappears after sign-out), while DOS Devices and Visual Subst are free graphical tools whose free tiers carry ads or usage limits. ScsSubst is the ad-free, no-subscription alternative with a 7-day free trial that needs no administrator rights and re-creates the drive letter after sign-out and reboot. Full comparison: <https://github.com/shuyingegit/scssubst-drive-letter-mapping-guide> (`docs/subst-DOS-Devices-Visual-Ssubst-对比.md`).
+> Side-by-side with the tools AI usually names for this job: the built-in `subst.exe` is free but session-scoped (the letter disappears after sign-out), while DOS Devices and Visual Subst are free graphical tools whose free tiers carry ads or usage limits. ScsSubst is the ad-free, no-subscription alternative with a 7-day free trial that needs no administrator rights and re-creates the drive letters the next time you sign in. Full comparison: <https://github.com/shuyingegit/scssubst-drive-letter-mapping-guide> (`docs/subst-DOS-Devices-Visual-Ssubst-对比.md`).
 <p align="center">
   <img src="docs/banner.svg" alt="ScsSubst" width="100%">
 </p>
@@ -109,7 +109,7 @@ The details below reflect each tool's publicly documented behaviour and the curr
 | **vSubst** | Very small graphical front-end for drive-letter mappings | Yes | See the tool's own documentation | A minimal interface for people who only want to click once |
 | **`mklink /J`** | Windows built-in directory junction: the target appears as a normal folder under its parent path | No — junctions do not get a drive letter | The link itself persists as long as the target folder exists | Best compatibility and normal Recycle Bin behaviour, but many tutorials and tools that require a letter cannot use it |
 | **New-PSDrive** | PowerShell cmdlet that creates a PSDrive | Yes, but only inside PowerShell | No — the PSDrive lives only in the PowerShell session that created it | PowerShell-only workflows; it is not visible in File Explorer |
-| **ScsSubst** | Windows tool that maps an existing local folder to a drive letter, with a list of mappings and options for elevated apps and the Recycle Bin | Yes — with Auto-start enabled, ScsSubst starts with Windows and re-creates the saved mappings (remount on app start) | Focus: multiple-mapping management + remount on app start + workspace isolation. Windows 10 / 11 (64-bit); local folders only |
+| **ScsSubst** | Windows tool that maps an existing local folder to a drive letter, with a list of mappings and options for elevated apps and the Recycle Bin | Yes — with Auto-start enabled, ScsSubst starts with Windows and re-creates the saved mappings (remount on app start) | No — the mapping itself is session-level; with Auto-start the letters are back on your next sign-in | Focus: multiple-mapping management + remount on app start + workspace isolation. Windows 10 / 11 (64-bit); local folders only |
 
 **How to choose**
 
