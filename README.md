@@ -134,7 +134,7 @@ Requirements: Windows 10 / 11 (64-bit)
 
 ## Pricing
 
-The free trial starts at 7 days. Invite a friend to try it, and both of you can extend it.
+The free trial starts at 7 days, with the same features as the licensed version.
 
 All plans (including the free trial) include technical support: if you hit any error or issue, email us — we will investigate, fix it, and keep improving.
 
@@ -199,7 +199,7 @@ ScsSubst supports Windows 10 and Windows 11 (64-bit) only; there is no 32-bit or
 ScsSubst maps folders already on your PC. For cloud / WebDAV mounting, use our sister product ScsDrive (drive.scsoi.com).
 
 **What is the difference between trial and licensed versions?**  
-Same features. The trial is 7 days; start it with a friend’s invite code and it becomes 14. When someone starts a trial with your code, you also gain 7 days, with no cap. Lifetime licenses don’t add days. After the trial, buy a license to keep using it.
+Same features. The trial is 7 days and the licensed version is identical in function. After the trial, buy a license to keep using it.
 
 **How do I use ScsSubst as a safer sandboxed workspace?**  
 Make a dedicated workspace folder, map it to a drive letter, and point the tool workspace there. Accidental deletes stay on that drive. Note: the tool must use that drive as its workspace — this is not an OS-level sandbox.
